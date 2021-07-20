@@ -1,4 +1,4 @@
-# Personal-Khata
+# MyKhata
 This is an example of a Google Appscript web app. This app can be used to take note of cash transactions.
 The live version is hosted in my account and the data is saved in a google sheet in my Google account. 
 But with a little effort anybody can run this application in their personal Google account where data will be saved in their personal google sheet.
