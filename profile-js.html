@@ -1,0 +1,65 @@
+<script type="text/javascript"> 
+        document.addEventListener('DOMContentLoaded', function() {
+          element = document.getElementById("whatsapp"); 
+          element.style.visibility = 'hidden'; 
+          element = document.getElementById("home"); 
+          element.style.visibility = 'hidden'; 
+          element = document.getElementById("sms"); 
+          element.style.visibility = 'hidden';
+        });
+        
+        
+        function onSuccess(url)
+        {
+        element = document.getElementById("whatsapp");
+        element.setAttribute("href", url); 
+        }
+        
+        function onSuccess2(url)
+        {
+        element = document.getElementById("sms");
+        element.setAttribute("href", url); 
+        }
+        
+        function showElement() { 
+            element = document.getElementById("collect_input");
+            if(element.value==null||element.value=="")
+            {
+            var ifrm = document.getElementById('myIframe');
+            ifrm = ifrm.contentWindow || ifrm.contentDocument.document || ifrm.contentDocument;
+            ifrm.document.open();
+            ifrm.document.write('<script>alert("Collection Can not be Empty");<\/script>');
+            ifrm.document.close();
+            }
+            else{
+            
+            var userInfo = {};
+            userInfo.weekly = document.getElementById("weekly").textContent;
+            userInfo.total = document.getElementById("total").textContent;
+            userInfo.phone = document.getElementById("phone").placeholder;
+            userInfo.row = document.getElementById("row").placeholder;
+            userInfo.col = document.getElementById("col").placeholder;
+            userInfo.val = document.getElementById("collect_input").value;
+            google.script.run.withSuccessHandler(onSuccess).userClicked(userInfo); 
+            google.script.run.withSuccessHandler(onSuccess2).userClicked2(userInfo); 
+            
+            element = document.getElementById("collect_input");
+            element.disabled = true;
+           
+            
+            element = document.getElementById("whatsapp"); 
+            element.style.visibility = 'visible'; 
+            element = document.getElementById("sms"); 
+            element.style.visibility = 'visible'; 
+            
+           }
+        } 
+         
+         
+         function showHome() { 
+            element = document.getElementById("home"); 
+            element.style.visibility = 'visible'; 
+           
+        } 
+        
+    </script>
