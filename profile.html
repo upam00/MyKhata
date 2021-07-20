@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base target="_top">
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="container">
+<div class="py-4 text-center">
+       <div class="row">
+        <div class="col-sm-12"><h1 class="text-center"><span class="badge badge-light"><?!= name; ?></span></h1></div>
+      </div>
+      </div>
+
+
+
+<div class="mb-3">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Phone No</span>
+                </div>
+                <input disabled="true" type="text" class="text-center form-control" id="phone" placeholder="<?!=phone;?>" required="">
+                <!--
+                <div class="input-group-append">
+                <button type="submit"  class="btn btn-primary">Change</button>
+                </div>
+                -->
+                
+              </div>
+             
+            </div>
+
+<ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Collection in Last 7 Days</h6>
+              </div>
+              <span class="text-muted"><h5 id="weekly"><?!=weekly;?> <i class="fa fa-inr"></i></h5></span>
+            </li>
+             <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0" >Total Collection</h6>
+              </div>
+              <span class="text-muted"><h5 id="total"><?!=total;?> <i class="fa fa-inr"></i></h5></span>
+            </li>
+         </ul>
+          
+    
+  <div class="col mb-3">
+                <h5 class="text-center mb-3">Enter Today's Collection</h5>
+  </div>    
+  <div class="row mb-1">
+                <div class="col-6"><input type="number" class="text-center form-control" id="collect_input" placeholder="" required="Enter Number">
+                <div class="invalid-feedback">
+                  Security code required
+                </div>
+                </div>
+                <div class="col-6">
+                <button class="btn btn-primary btn-block" id="collect" onclick="showElement()" type="submit">COLLECT</button>
+                </div>
+   </div>
+   <br>
+   <div class="row mb-1">
+    <div class="col-6 "><a class=" btn btn-secondary btn-lg btn-block" id="whatsapp" onclick="showHome()" type="submit" href="" target="_blank">Share <i class="fa fa-whatsapp"></i></a></div>
+    <div class="col-6"><a class=" btn btn-secondary btn-lg btn-block" id="sms" onclick="showHome()" type="submit" href="" target="_blank">Share <i class="fa fa-comments"></i></a></div>
+   </div>
+  </div>
+   <br>
+   <div class="row mb-1">
+   <div class="col-3"></div>
+   <div class="col-6"><a class="btn btn-lg btn-block btn-outline-primary" href="<?!=link;?>" id="home" type="submit"><i class="fa fa-home"></i></a></div>
+   <div class="col-3"></div>
+    </div>
+    
+
+<input type="number" class="invisible text-center form-control" id="row" placeholder="<?!= row; ?>" required="Enter Number">
+<input type="number" class="invisible text-center form-control" id="col" placeholder="<?!= col; ?>" required="Enter Number">
+<input type="number" class="invisible text-center form-control" id="date" placeholder="<?!= date; ?>" required="Enter Number">
+
+<!--<div id="col" class="visible" value="2"></div>
+<div id="row" class="visible" value="2"></div>
+<div id="date" class="invisible" value="2"></div>
+-->
+<iframe id="myIframe" style="width:0;height:0;border:0; border:none;"></iframe>
+
+<?!= include('profile-js'); ?>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</body>
+</html>
+
